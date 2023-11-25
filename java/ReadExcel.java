@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -21,9 +22,10 @@ public class ReadExcel {
     }
 
     public static void main(String[] args) throws IOException {
-        String inputFile = cmd("Input File","/opt/irisapp/excel/money.xls");
-        File inputWorkbook = new File(inputFile);
-        Workbook w;
+	    String inputFile = cmd("Input File","/opt/irisapp/excel/money.xls");
+	    File inputWorkbook = new File(inputFile);
+	    FileWriter myWriter = new FileWriter("/opt/irisapp/filename.txt");
+	    Workbook w;
         try {
             w = Workbook.getWorkbook(inputWorkbook);
             // Get the first sheet
@@ -44,7 +46,11 @@ public class ReadExcel {
 
                 }
             }
+		myWriter.write("Files in Java might be tricky, but it is fun enough!");
+		myWriter.close();
+		System.out.println("Successfully wrote to the file.");
         } catch (BiffException e) {
+		System.out.println("An error occurred.");
             e.printStackTrace();
         }
 
