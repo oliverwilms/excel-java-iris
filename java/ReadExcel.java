@@ -28,19 +28,18 @@ public class ReadExcel {
             w = Workbook.getWorkbook(inputWorkbook);
             // Get the first sheet
             Sheet sheet = w.getSheet(0);
-            // Loop over columns and lines
-            for (int col = 0; col < sheet.getColumns(); col++) {
-                for (int row = 0; row < sheet.getRows(); row++) {
+            // Loop over rows and columns
+		for (int row = 0; row < sheet.getRows(); row++) {
+			for (int col = 0; col < sheet.getColumns(); col++) {
+				
                     Cell cell = sheet.getCell(col, row);
                     CellType type = cell.getType();
                     if (type == CellType.LABEL) {
-                        System.out.println("I got a label "
-                                + cell.getContents());
+                        System.out.println("I got a label " + cell.getContents());
                     }
 
                     if (type == CellType.NUMBER) {
-                        System.out.println("I got a number "
-                                + cell.getContents());
+                        System.out.println("I got a number " + cell.getContents());
                     }
 
                 }
