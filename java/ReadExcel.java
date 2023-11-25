@@ -9,12 +9,12 @@ import jxl.read.biff.BiffException;
 
 public class ReadExcel {
 
-    public static String cmd(String what, String default) {
+    public static String cmd(String what, String hint) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print(">>> "+what+" ["+default+"]: ");
+		System.out.print(">>> "+what+" ["+hint+"]: ");
 		String ans = sc.nextLine();
         if (ans.isEmpty()) {
-            ans = default;
+            ans = hint;
         }
         return ans;
     }
