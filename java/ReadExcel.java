@@ -32,7 +32,7 @@ public class ReadExcel {
             Sheet sheet = w.getSheet(0);
             // Loop over rows and columns
 		for (int row = 0; row < sheet.getRows(); row++) {
-			String myRow = ""
+			String myRow = "";
 			for (int col = 0; col < sheet.getColumns(); col++) {
 				
                     Cell cell = sheet.getCell(col, row);
