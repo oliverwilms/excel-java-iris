@@ -22,12 +22,12 @@ $ docker-compose up -d
 
 ```
 $ java ReadExcel
->>> Input File [/opt/irisapp/excel/money.xls]:
 ```
 
 Press Enter to accept the default /opt/irisapp/excel/money.xls.
 
 ```
+>>> Input File [/opt/irisapp/excel/money.xls]:
 I got a label a1
 I got a number 2
 I got a number 11
