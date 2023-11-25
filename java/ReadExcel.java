@@ -32,21 +32,25 @@ public class ReadExcel {
             Sheet sheet = w.getSheet(0);
             // Loop over rows and columns
 		for (int row = 0; row < sheet.getRows(); row++) {
+			String myRow = ""
 			for (int col = 0; col < sheet.getColumns(); col++) {
 				
                     Cell cell = sheet.getCell(col, row);
                     CellType type = cell.getType();
                     if (type == CellType.LABEL) {
                         System.out.println("I got a label " + cell.getContents());
+			    myRow = myRow + cell.getContents();
                     }
 
                     if (type == CellType.NUMBER) {
                         System.out.println("I got a number " + cell.getContents());
+			    myRow = myRow + cell.getContents();
                     }
 
                 }
+			// myRow = myRow + System.lineSeparator();
+			myWriter.write(myRow + System.lineSeparator());
             }
-		myWriter.write("Files in Java might be tricky, but it is fun enough!");
 		myWriter.close();
 		System.out.println("Successfully wrote to the file.");
         } catch (BiffException e) {
