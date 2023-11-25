@@ -26,11 +26,11 @@ RUN export CLASSPATH
 ###########################################
 
 USER ${ISC_PACKAGE_MGRUSER}
-
+COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} java java
 COPY --chown=${ISC_PACKAGE_MGRUSER} src src
-
+COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} *.sh .
 USER root
-RUN chmod ugo+x /opt/irisapp/src/*.sh
+RUN chmod ugo+x /opt/irisapp/*.sh
 
 USER ${ISC_PACKAGE_MGRUSER}
 
@@ -39,4 +39,4 @@ COPY iris.script iris.script
 
 RUN iris start IRIS && iris session IRIS < iris.script && iris stop IRIS quietly 
 
-RUN /opt/irisapp/src/pre.sh
+RUN /opt/irisapp/java.sh
