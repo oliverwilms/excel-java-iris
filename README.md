@@ -18,6 +18,8 @@ Open the terminal in this directory and run:
 $ docker-compose up -d
 ```
 
+## Run java code to read an excel file
+
 ```
 $ java ReadExcel
 >>> Input File [/opt/irisapp/excel/money.xls]:
