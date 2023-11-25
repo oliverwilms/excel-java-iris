@@ -9,13 +9,18 @@ import jxl.read.biff.BiffException;
 
 public class ReadExcel {
 
-    private String inputFile;
-
-    public void setInputFile(String inputFile) {
-        this.inputFile = inputFile;
+    public static String cmd(String what, String default) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print(">>> "+what+" ["+default+"]: ");
+		String ans = sc.nextLine();
+        if (ans.isEmpty()) {
+            ans = default;
+        }
+        return ans;
     }
 
-    public void read() throws IOException  {
+    public static void main(String[] args) throws IOException {
+        String inputFile = cmd("Input File","/opt/irisapp/excel/money.xls");
         File inputWorkbook = new File(inputFile);
         Workbook w;
         try {
@@ -42,11 +47,7 @@ public class ReadExcel {
         } catch (BiffException e) {
             e.printStackTrace();
         }
-    }
 
-    public static void main(String[] args) throws IOException {
-        setInputFile("/opt/irisapp/excel/money.xls");
-        read();
     }
 
 }
