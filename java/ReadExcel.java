@@ -44,7 +44,7 @@ public class ReadExcel {
         }
     }
 
-    public void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         setInputFile("/opt/irisapp/excel/money.xls");
         read();
     }
