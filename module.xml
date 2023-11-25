@@ -8,6 +8,7 @@
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="otw.PKG"/>
+      <FileCopy Name="excel/" Target="${mgrdir}excel/"/>
     </Module>
   </Document>
 </Export>
