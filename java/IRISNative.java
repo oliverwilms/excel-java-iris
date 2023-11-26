@@ -4,6 +4,12 @@ import com.intersystems.jdbc.IRISConnection;
 import com.intersystems.jdbc.IRIS;
 import com.intersystems.jdbc.IRISIterator;
 
+import jxl.Cell;
+import jxl.CellType;
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+
 public class IRISNative {
 
     protected static int superserverPort = 00000; // YOUR PORT HERE
@@ -18,6 +24,36 @@ public class IRISNative {
                     ("jdbc:IRIS://localhost:"+superserverPort+"/"+namespace,username,password);
             // create Native API object
             IRIS iris = IRIS.createIRIS(conn);
+            Workbook w;
+            
+        try {
+            w = Workbook.getWorkbook(inputWorkbook);
+            // Get the first sheet
+            Sheet sheet = w.getSheet(0);
+            // Loop over rows and columns
+            for (int row = 0; row < sheet.getRows(); row++) {
+                ArrayList<String> myRow = new ArrayList<String>(); // Create an ArrayList object
+                for (int col = 0; col < sheet.getColumns(); col++) {
+                    Cell cell = sheet.getCell(col, row);
+                    CellType type = cell.getType();
+                    if (type == CellType.LABEL) {
+                        System.out.println("I got a label " + cell.getContents());
+                        myRow.add(cell.getContents());
+                    }
+
+                    if (type == CellType.NUMBER) {
+                        System.out.println("I got a number " + cell.getContents());
+                        myRow.add(cell.getContents());
+                    }
+
+                }
+			
+            }
+		
+        } catch (BiffException e) {
+		System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
 
 
             System.out.println("[1. Setting and getting a global]");
