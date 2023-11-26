@@ -1,3 +1,4 @@
+import java.io.File;
 import java.sql.DriverManager;
 import java.util.Scanner;
 import com.intersystems.jdbc.IRISConnection;
@@ -42,18 +43,18 @@ public class IRISNative {
             Sheet sheet = w.getSheet(0);
             // Loop over rows and columns
             for (int row = 0; row < sheet.getRows(); row++) {
-                ArrayList<String> myRow = new ArrayList<String>(); // Create an ArrayList object
+                //ArrayList<String> myRow = new ArrayList<String>(); // Create an ArrayList object
                 for (int col = 0; col < sheet.getColumns(); col++) {
                     Cell cell = sheet.getCell(col, row);
                     CellType type = cell.getType();
                     if (type == CellType.LABEL) {
                         System.out.println("I got a label " + cell.getContents());
-                        myRow.add(cell.getContents());
+                        //myRow.add(cell.getContents());
                     }
 
                     if (type == CellType.NUMBER) {
                         System.out.println("I got a number " + cell.getContents());
-                        myRow.add(cell.getContents());
+                        //myRow.add(cell.getContents());
                     }
 
                 }
