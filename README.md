@@ -21,7 +21,7 @@ $ docker-compose up -d
 ## Run java code to read an excel file
 
 ```
-$ java ReadExcel
+$ docker-compose exec -it iris java IRISNative
 ```
 
 Press Enter to accept the default /opt/irisapp/excel/money.xls.
