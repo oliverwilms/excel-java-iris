@@ -56,6 +56,8 @@ public class IRISNative {
                         System.out.println("I got a number " + cell.getContents());
                         //myRow.add(cell.getContents());
                     }
+                    // ObjectScript equivalent: set ^excel("1",row,col) = ...
+                    iris.set(cell.getContents(),"^excel","1",row,col);
 
                 }
 			
