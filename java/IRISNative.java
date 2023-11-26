@@ -51,7 +51,7 @@ public class IRISNative {
                         System.out.println("I got a label " + cell.getContents());
                         String myLabel = cell.getContents();
 			// ObjectScript equivalent: set ^excel("1",row,col) = ...
-                        //iris.set(myLabel,"^excel","1",row,col);
+                        iris.set(myLabel,"^excel","1",row,col);
 
                     }
 
@@ -59,11 +59,11 @@ public class IRISNative {
                         System.out.println("I got a number " + cell.getContents());
                         int myNumber = cell.getContents();
        			// ObjectScript equivalent: set ^excel("1",row,col) = ...
-                        //iris.set(myNumber,"^excel","1",row,col);
+                        iris.set(myNumber,"^excel","1",row,col);
 
                     }
                     // ObjectScript equivalent: set ^excel("1",row,col) = ...
-                    iris.set(cell.getContents(),"^excel","1",row,col);
+                    //iris.set(cell.getContents(),"^excel","1",row,col);
 
                 }
 			
