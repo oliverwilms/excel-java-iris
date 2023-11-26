@@ -6,6 +6,7 @@ import java.util.ArrayList; // The ArrayList class is a resizable array
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import jxl.Cell;
 import jxl.CellType;
