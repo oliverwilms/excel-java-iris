@@ -45,7 +45,7 @@ public class ReadExcel {
 	}
 
 	public void givenDataArray_whenConvertToCSV_thenOutputCreated() throws IOException {
-		File csvOutputFile = new File(CSV_FILE_NAME);
+		File csvOutputFile = new File("/opt/irisapp/CSVfile.csv");
 		try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
 			dataLines.stream()
 				.map(this::convertToCSV)
