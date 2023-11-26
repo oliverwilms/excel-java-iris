@@ -45,15 +45,15 @@ public class ReadExcel {
 		return escapedData;
 	}
 
-	public void givenDataArray_whenConvertToCSV_thenOutputCreated(String[] dataLines) throws IOException {
-		File csvOutputFile = new File("/opt/irisapp/CSVfile.csv");
-		try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
-			dataLines.stream()
-				.map(this::convertToCSV)
-				.forEach(pw::println);
-		}
-		assertTrue(csvOutputFile.exists());
-	}
+	//public void givenDataArray_whenConvertToCSV_thenOutputCreated() throws IOException {
+	//	File csvOutputFile = new File("/opt/irisapp/CSVfile.csv");
+	//	try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
+	//		dataLines.stream()
+	//			.map(this::convertToCSV)
+	//			.forEach(pw::println);
+	//	}
+	//	assertTrue(csvOutputFile.exists());
+	//}
 
     public static void main(String[] args) throws IOException {
 	    List<String[]> dataLines = new ArrayList<>();
@@ -88,6 +88,13 @@ public class ReadExcel {
 			//myWriter.write(csvRow + System.lineSeparator());
 			givenDataArray_whenConvertToCSV_thenOutputCreated();
             }
+		File csvOutputFile = new File("/opt/irisapp/CSVfile.csv");
+		try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
+			dataLines.stream()
+				.map(this::convertToCSV)
+				.forEach(pw::println);
+		}
+		assertTrue(csvOutputFile.exists());
 		myWriter.close();
 		System.out.println("Successfully wrote to the file.");
         } catch (BiffException e) {
