@@ -49,12 +49,18 @@ public class IRISNative {
                     CellType type = cell.getType();
                     if (type == CellType.LABEL) {
                         System.out.println("I got a label " + cell.getContents());
-                        //myRow.add(cell.getContents());
+                        String myLabel = cell.getContents();
+			// ObjectScript equivalent: set ^excel("1",row,col) = ...
+                        //iris.set(myLabel,"^excel","1",row,col);
+
                     }
 
                     if (type == CellType.NUMBER) {
                         System.out.println("I got a number " + cell.getContents());
-                        //myRow.add(cell.getContents());
+                        int myNumber = cell.getContents();
+       			// ObjectScript equivalent: set ^excel("1",row,col) = ...
+                        //iris.set(myNumber,"^excel","1",row,col);
+
                     }
                     // ObjectScript equivalent: set ^excel("1",row,col) = ...
                     iris.set(cell.getContents(),"^excel","1",row,col);
