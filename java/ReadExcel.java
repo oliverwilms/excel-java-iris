@@ -83,10 +83,9 @@ public class ReadExcel {
                     }
 
                 }
-			dataLines.add(myRow);
-			//ArrayList<String> csvRow = convertToCSV(myRow);
+			ArrayList<String> csvRow = convertToCSV(myRow);
 			//myWriter.write(csvRow + System.lineSeparator());
-			givenDataArray_whenConvertToCSV_thenOutputCreated();
+			//givenDataArray_whenConvertToCSV_thenOutputCreated();
             }
 		File csvOutputFile = new File("/opt/irisapp/CSVfile.csv");
 		try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
