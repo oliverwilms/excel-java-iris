@@ -57,7 +57,7 @@ public class IRISNative {
 
                     if (type == CellType.NUMBER) {
                         System.out.println("I got a number " + cell.getContents());
-                        int myNumber = cell.getContents();
+                        String myNumber = cell.getContents();
        			// ObjectScript equivalent: set ^excel("1",row,col) = ...
                         iris.set(myNumber,"^excel","1",row,col);
 
