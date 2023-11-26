@@ -44,6 +44,16 @@ public class ReadExcel {
 		return escapedData;
 	}
 
+	public void givenDataArray_whenConvertToCSV_thenOutputCreated() throws IOException {
+		File csvOutputFile = new File(CSV_FILE_NAME);
+		try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
+			dataLines.stream()
+				.map(this::convertToCSV)
+				.forEach(pw::println);
+		}
+		assertTrue(csvOutputFile.exists());
+	}
+
     public static void main(String[] args) throws IOException {
 	    String inputFile = cmd("Input File","/opt/irisapp/excel/money.xls");
 	    File inputWorkbook = new File(inputFile);
@@ -72,7 +82,9 @@ public class ReadExcel {
 
                 }
 			ArrayList<String> csvRow = convertToCSV(myRow);
-			myWriter.write(csvRow + System.lineSeparator());
+			myWriter.write({
+				myRow.
+				});
             }
 		myWriter.close();
 		System.out.println("Successfully wrote to the file.");
