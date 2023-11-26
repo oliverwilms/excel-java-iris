@@ -45,7 +45,7 @@ public class ReadExcel {
 		return escapedData;
 	}
 
-	public void givenDataArray_whenConvertToCSV_thenOutputCreated() throws IOException {
+	public void givenDataArray_whenConvertToCSV_thenOutputCreated(String[] dataLines) throws IOException {
 		File csvOutputFile = new File("/opt/irisapp/CSVfile.csv");
 		try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
 			dataLines.stream()
