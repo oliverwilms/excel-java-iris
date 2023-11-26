@@ -1,9 +1,11 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.ArrayList; // The ArrayList class is a resizable array
+import java.util.List;
 import java.util.Scanner;
-import static java.util.stream.Collectors.*;
+import java.util.stream.Collectors;
 
 import jxl.Cell;
 import jxl.CellType;
