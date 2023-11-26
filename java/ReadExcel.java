@@ -55,6 +55,7 @@ public class ReadExcel {
 	}
 
     public static void main(String[] args) throws IOException {
+	    List<String[]> dataLines = new ArrayList<>();
 	    String inputFile = cmd("Input File","/opt/irisapp/excel/money.xls");
 	    File inputWorkbook = new File(inputFile);
 	    FileWriter myWriter = new FileWriter("/opt/irisapp/filename.txt");
@@ -81,10 +82,10 @@ public class ReadExcel {
                     }
 
                 }
-			ArrayList<String> csvRow = convertToCSV(myRow);
-			myWriter.write({
-				myRow.
-				});
+			dataLines.add(myRow);
+			//ArrayList<String> csvRow = convertToCSV(myRow);
+			//myWriter.write(csvRow + System.lineSeparator());
+			givenDataArray_whenConvertToCSV_thenOutputCreated();
             }
 		myWriter.close();
 		System.out.println("Successfully wrote to the file.");
