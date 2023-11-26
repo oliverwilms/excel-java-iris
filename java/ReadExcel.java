@@ -71,7 +71,7 @@ public class ReadExcel {
                     }
 
                 }
-			String csvRow = convertToCSV(myRow);
+			ArrayList<String> csvRow = convertToCSV(myRow);
 			myWriter.write(csvRow + System.lineSeparator());
             }
 		myWriter.close();
