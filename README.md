@@ -1,6 +1,6 @@
 # excel-java-iris
 
-This repo contains a java routine to read an Excel workbook and write the data into IRIS globals.
+This repo contains a java routine to read data from Excel 95, 97, 2000, XP, and 2003 workbooks and write the data into IRIS globals.
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
