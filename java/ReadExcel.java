@@ -64,8 +64,8 @@ public class ReadExcel {
         try {
             w = Workbook.getWorkbook(inputWorkbook);
             // Get the first sheet
-		int Sheets = w.getSheets();
-            Sheet sheet = w.getSheet(Sheets);
+		int sheets = w.getNumberOfSheets();
+            Sheet sheet = w.getSheet(sheets-1);
             // Loop over rows and columns
 		for (int row = 0; row < sheet.getRows(); row++) {
 			ArrayList<String> myRow = new ArrayList<String>(); // Create an ArrayList object
