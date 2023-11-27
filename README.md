@@ -75,6 +75,8 @@ USER>zw ^excel
 ## Import Excel data from IRIS global into IRIS persistent class
 
 ```
-USER>w ##class(otw.iris.excel).importExcel()
+USER>w ##class(otw.iris.excel).importExcel(-1)
 1
 ```
+
+I added -1 above because I want to start importing with sheet 0. In my personal Excel workbook, I want to skip the first five workbooks.
