@@ -23,7 +23,7 @@ RUN export JRE_HOME
 ENV CLASSPATH .:/usr/irissys/dev/java/lib/1.8/*
 RUN export CLASSPATH
 
-COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} csp csp
+# COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} csp csp
 COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} excel excel
 COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} java java
 COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} *.jar /usr/irissys/dev/java/lib/1.8/
