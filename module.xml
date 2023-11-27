@@ -7,7 +7,7 @@
       <Description>excel-java-iris</Description>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="otw.PKG"/>
+      <Resource Name="dc.iris.PKG"/>
       <CSPApplication 
         Url="/irisapp"
         MatchRoles=":{$dbrole}"
