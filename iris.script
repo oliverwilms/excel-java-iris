@@ -1,5 +1,6 @@
     zn "%SYS"
     Do ##class(Security.Users).UnExpireUserPasswords("*")
     zn "USER"
+    zpm "install iris-globals-contest"
     zpm "load /opt/irisapp/ -v":1
     halt
