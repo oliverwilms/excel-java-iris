@@ -1,4 +1,4 @@
-Class dc.iris.excel
+Class otw.iris.excel
 {
 
 ClassMethod getHeaders(
@@ -51,7 +51,7 @@ ClassMethod importExcelSheet(pSheet As %String = "") As %Status
 	For {
 		Set tRow = $Order(^excel(pSheet,tRow),1)
 		If (tRow = "") { Quit }
-		Set o = ##class(transact).%New()
+		Set o = ##class(dc.iris.transact).%New()
 		Set o.Account = $Get(^excel(pSheet,tRow,colAccount))
 		Set o.Category = $Get(^excel(pSheet,tRow,colCategory))
 		Set o.CheckNumber = $Get(^excel(pSheet,tRow,colCheck))
@@ -62,6 +62,7 @@ ClassMethod importExcelSheet(pSheet As %String = "") As %Status
 		Set o.Status = $Get(^excel(pSheet,tRow,colStatus))
 		Set o.SubCategory = $Get(^excel(pSheet,tRow,colSubCategory))
 		Set o.TranDate = $Get(^excel(pSheet,tRow,colTranDate))
+		Set o.myId = $Increment(^GLOBAL)
 		Set tSC = o.%Save()
 		If $$$ISERR(tSC) { Quit }
 	}
