@@ -42,6 +42,36 @@ Press Enter to accept the default /opt/irisapp/excel/money.xls.
 $ docker-compose exec -it iris iris session iris
 ```
 
+## See data from Excel workbook in IRIS global
+
+```
+USER>zw ^excel
+^excel(0,0,0)="Date"
+^excel(0,0,1)="Check"
+^excel(0,0,2)="Merchant"
+^excel(0,0,3)="Category"
+^excel(0,0,4)="SubCategory"
+^excel(0,0,5)="Memo"
+^excel(0,0,6)="Credit"
+^excel(0,0,7)="Debit"
+^excel(0,0,8)="Account"
+^excel(0,0,9)="Status"
+^excel(0,1,0)="27-Nov"
+^excel(0,1,1)=101
+^excel(0,1,2)="Landlord"
+^excel(0,1,3)="Business Expense"
+^excel(0,1,4)="Rent"
+^excel(0,1,5)="December"
+^excel(0,1,7)=250
+^excel(0,1,8)="Checking"
+^excel(0,2,0)="27-Nov"
+^excel(0,2,2)="Aldi"
+^excel(0,2,3)="Groceries"
+^excel(0,2,5)=16
+^excel(0,2,7)=54.35
+^excel(0,2,8)="Checking"
+```
+
 ## Import Excel data from IRIS global into IRIS persistent class
 
 ```
