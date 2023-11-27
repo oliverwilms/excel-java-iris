@@ -34,6 +34,8 @@ Press Enter to accept the default /opt/irisapp/excel/money.xls.
 >>> Input File [/opt/irisapp/excel/money.xls]
 ```
 
+![screenshot](https://github.com/oliverwilms/bilder/blob/main/Money_xls.PNG)
+
 ## IRIS session
 
 ```
