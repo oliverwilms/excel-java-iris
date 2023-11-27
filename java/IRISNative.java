@@ -39,8 +39,9 @@ public class IRISNative {
             Workbook w;
         try {
             w = Workbook.getWorkbook(inputWorkbook);
-            // Get the first sheet
-            Sheet sheet = w.getSheet(0);
+	for (int sheetNum = 0; sheetNum < w.getNumberOfSheets(); sheetNum++) {
+            // Get the [sheetNum] sheet
+            Sheet sheet = w.getSheet(sheetNum);
             // Loop over rows and columns
             for (int row = 0; row < sheet.getRows(); row++) {
                 for (int col = 0; col < sheet.getColumns(); col++) {
@@ -67,7 +68,7 @@ public class IRISNative {
                 }
 			
             }
-		
+	}
         } catch (BiffException e) {
 		System.out.println("An error occurred.");
             e.printStackTrace();
