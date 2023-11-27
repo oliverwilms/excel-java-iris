@@ -64,7 +64,8 @@ public class ReadExcel {
         try {
             w = Workbook.getWorkbook(inputWorkbook);
             // Get the first sheet
-            Sheet sheet = w.getSheet(0);
+		int Sheets = w.getSheets();
+            Sheet sheet = w.getSheet(Sheets);
             // Loop over rows and columns
 		for (int row = 0; row < sheet.getRows(); row++) {
 			ArrayList<String> myRow = new ArrayList<String>(); // Create an ArrayList object
@@ -83,17 +84,17 @@ public class ReadExcel {
                     }
 
                 }
-			ArrayList<String> csvRow = convertToCSV(myRow);
+			//ArrayList<String> csvRow = convertToCSV(myRow);
 			//myWriter.write(csvRow + System.lineSeparator());
 			//givenDataArray_whenConvertToCSV_thenOutputCreated();
             }
-		File csvOutputFile = new File("/opt/irisapp/CSVfile.csv");
-		try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
-			dataLines.stream()
-				.map(this::convertToCSV)
-				.forEach(pw::println);
-		}
-		assertTrue(csvOutputFile.exists());
+		//File csvOutputFile = new File("/opt/irisapp/CSVfile.csv");
+		//try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
+		//	dataLines.stream()
+		//		.map(this::convertToCSV)
+		//		.forEach(pw::println);
+		//}
+		//assertTrue(csvOutputFile.exists());
 		myWriter.close();
 		System.out.println("Successfully wrote to the file.");
         } catch (BiffException e) {
