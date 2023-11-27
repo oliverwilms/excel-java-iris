@@ -50,6 +50,9 @@ public class IRISNative {
                     // if (type == CellType.LABEL) {
                         // System.out.println("I got a label " + cell.getContents());
                         String myLabel = cell.getContents();
+			if (myLabel == "") {
+				continue;  // Skip empty cells
+			}
 			// ObjectScript equivalent: set ^excel("1",row,col) = ...
                         iris.set(myLabel,"^excel",sheetNum,row,col);
 
