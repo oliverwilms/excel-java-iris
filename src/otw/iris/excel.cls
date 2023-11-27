@@ -62,6 +62,7 @@ ClassMethod importExcelSheet(pSheet As %String = "") As %Status
 		Set o.Status = $Get(^excel(pSheet,tRow,colStatus))
 		Set o.SubCategory = $Get(^excel(pSheet,tRow,colSubCategory))
 		Set o.TranDate = $Get(^excel(pSheet,tRow,colTranDate))
+		Set o.myId = $Increment(^GLOBAL)
 		Set tSC = o.%Save()
 		If $$$ISERR(tSC) { Quit }
 	}
