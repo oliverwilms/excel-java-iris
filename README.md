@@ -83,4 +83,4 @@ I added -1 above because I want to start importing with sheet 0. In my personal 
 
 ## See data from Excel workbook in IRIS SQL table
 
-![screenshot](https://github.com/oliverwilms/bilder/blob/main/Capture_SQL.PNG)
+![screenshot](https://github.com/oliverwilms/bilder/blob/main/Capture_SQL.JPG)
