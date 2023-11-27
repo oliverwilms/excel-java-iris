@@ -6,6 +6,8 @@ Install iris-globals-contest package via ZPM package deployment. This provides p
 
 New otw.iris.excel class imports data from ^excel global into dc.iris.transact table.
 
+You can find [Online Demo](https://excel-java-iris.demo.community.intersystems.com/csp/sys/UtilHome.csp) here.
+
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
