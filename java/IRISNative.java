@@ -47,21 +47,21 @@ public class IRISNative {
                 for (int col = 0; col < sheet.getColumns(); col++) {
                     Cell cell = sheet.getCell(col, row);
                     CellType type = cell.getType();
-                    if (type == CellType.LABEL) {
+                    // if (type == CellType.LABEL) {
                         // System.out.println("I got a label " + cell.getContents());
                         String myLabel = cell.getContents();
 			// ObjectScript equivalent: set ^excel("1",row,col) = ...
                         iris.set(myLabel,"^excel",sheetNum,row,col);
 
-                    }
+                    // }
 
-                    if (type == CellType.NUMBER) {
+                    // if (type == CellType.NUMBER) {
                         // System.out.println("I got a number " + cell.getContents());
-                        String myNumber = cell.getContents();
+                        // String myNumber = cell.getContents();
        			// ObjectScript equivalent: set ^excel("1",row,col) = ...
-                        iris.set(myNumber,"^excel",sheetNum,row,col);
+                        // iris.set(myNumber,"^excel",sheetNum,row,col);
 
-                    }
+                    // }
                     // ObjectScript equivalent: set ^excel("1",row,col) = ...
                     //iris.set(cell.getContents(),"^excel","1",row,col);
 
