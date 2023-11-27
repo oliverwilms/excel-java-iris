@@ -80,3 +80,7 @@ USER>w ##class(otw.iris.excel).importExcel(-1)
 ```
 
 I added -1 above because I want to start importing with sheet 0. In my personal Excel workbook, I want to skip the first five workbooks.
+
+## See data from Excel workbook in IRIS SQL table
+
+![screenshot](https://github.com/oliverwilms/bilder/blob/main/Capture_SQL.PNG)
