@@ -7,3 +7,5 @@ export CLASSPATH=.:/usr/irissys/dev/java/lib/1.8/*
 echo "Building..."
 cd /opt/irisapp
 javac -classpath $CLASSPATH -d . java/IRISNative.java
+echo "Executing..."
+java IRISNative
