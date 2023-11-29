@@ -27,19 +27,18 @@ public class IRISNative {
         }
         return ans;
     }
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         try {
             // open connection to InterSystems IRIS instance using connection string
             IRISConnection conn = (IRISConnection) DriverManager.getConnection
                     ("jdbc:IRIS://localhost:"+superserverPort+"/"+namespace,username,password);
             // create Native API object
             IRIS iris = IRIS.createIRIS(conn);
-	int argLen = args.length;
-	if (argLen > 0) {
+	int count = args.length;
+	if (count > 0) {
 		String inputFile = args[0];
-	}
-	else {
-            String inputFile = cmd("Input File","/opt/irisapp/excel/money.xls");
+	} else {
+		String inputFile = cmd("Input File","/opt/irisapp/excel/money.xls");
 	}
 	    File inputWorkbook = new File(inputFile);
             Workbook w;
