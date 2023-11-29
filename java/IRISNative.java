@@ -35,10 +35,11 @@ public class IRISNative {
             // create Native API object
             IRIS iris = IRIS.createIRIS(conn);
 	int count = args.length;
+	String inputFile = "?";
 	if (count > 0) {
-		String inputFile = args[0];
+		inputFile = args[0];
 	} else {
-		String inputFile = cmd("Input File","/opt/irisapp/excel/money.xls");
+		inputFile = cmd("Input File","/opt/irisapp/excel/money.xls");
 	}
 	    File inputWorkbook = new File(inputFile);
             Workbook w;
