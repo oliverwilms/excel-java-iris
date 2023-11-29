@@ -8,4 +8,4 @@ echo "Building..."
 cd /opt/irisapp
 javac -classpath $CLASSPATH -d . java/IRISNative.java
 echo "Executing..."
-java IRISNative
+java IRISNative /opt/irisapp/excel/money.xls
