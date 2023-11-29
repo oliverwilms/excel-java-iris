@@ -34,8 +34,8 @@ public class IRISNative {
                     ("jdbc:IRIS://localhost:"+superserverPort+"/"+namespace,username,password);
             // create Native API object
             IRIS iris = IRIS.createIRIS(conn);
-	int count = args.length;
-	if (count > 0) {
+	int argLen = args.length;
+	if (argLen > 0) {
 		String inputFile = args[0];
 	}
 	else {
