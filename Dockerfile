@@ -37,6 +37,6 @@ USER ${ISC_PACKAGE_MGRUSER}
 COPY module.xml module.xml
 COPY iris.script iris.script
 
-RUN iris start IRIS && iris session IRIS < iris.script && iris stop IRIS quietly 
-
-RUN /opt/irisapp/java.sh
+RUN iris start IRIS && iris session IRIS < iris.script && iris stop IRIS quietly && \ 
+  cp /usr/irissys/csp/irisapp/* /usr/irissys/csp/user/ && \ 
+  /opt/irisapp/java.sh
