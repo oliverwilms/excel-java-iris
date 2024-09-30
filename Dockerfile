@@ -34,6 +34,8 @@ RUN chmod ugo+x /opt/irisapp/*.sh
 
 USER ${ISC_PACKAGE_MGRUSER}
 
+RUN pip3 install -r requirements.txt
+
 COPY module.xml module.xml
 COPY iris.script iris.script
 
