@@ -24,11 +24,11 @@ ENV CLASSPATH .:/usr/irissys/dev/java/lib/1.8/*
 RUN export CLASSPATH
 
 # COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} csp csp
-COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} excel excel
-COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} java java
+# COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} excel excel
+# COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} java java
 COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} *.jar /usr/irissys/dev/java/lib/1.8/
-COPY --chown=${ISC_PACKAGE_MGRUSER} src src
-COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} *.sh .
+COPY --chown=${ISC_PACKAGE_MGRUSER} . .
+# COPY --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} *.sh .
 
 RUN chmod ugo+x /opt/irisapp/*.sh
 
