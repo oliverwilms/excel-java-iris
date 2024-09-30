@@ -1,4 +1,4 @@
 sqlalchemy-iris
-streamlit
+#streamlit
 pandas
-pygwalker
+#pygwalker
