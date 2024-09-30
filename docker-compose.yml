@@ -7,5 +7,10 @@ services:
     command: --ISCAgent false
     restart: always
     ports: 
-      - 50002:1972
-      - 60002:52773
+      - 51972:1972
+      - 57700:52773
+      - 53773
+      - 8051:8051
+    volumes:
+      - ./:/irisdev/app
+      - ./init.sh:/docker-entrypoint-initdb.d/init.sh
