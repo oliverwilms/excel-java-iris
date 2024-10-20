@@ -1,10 +1,7 @@
 Class otw.iris.excel
 {
 
-ClassMethod getHeaders(
-	pSheet As %String = 0,
-	ByRef pHeaders,
-	ByRef pHeadata) As %Status
+ClassMethod getHeaders(pSheet As %String = 0, ByRef pHeaders, ByRef pHeadata) As %Status
 {
 	Set tSC	 = $$$OK
 	Set tRow = 0
@@ -14,6 +11,7 @@ ClassMethod getHeaders(
 		If (tCol = "") { Quit }
 		Set pHeaders(tCol) = $Get(^excel(pSheet,tRow,tCol))
 		If (tData = "") { Continue }
+		If ($Extract(tData,1,4) = "Date") Set tData = "Date"
 		Set pHeadata(tData) = tCol
 	}
 	Quit tSC
