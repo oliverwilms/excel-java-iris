@@ -55,6 +55,7 @@ ClassMethod importExcelSheet(pSheet As %String = "") As %Status
 		If (tRow = "") { Quit }
 		Set (tCredit,tDebit) = ""
 		Set o = ##class(dc.iris.transact).%New()
+	  Try {
 		If (colAccount > -1) Set o.Account = $Get(^excel(pSheet,tRow,colAccount))
 		If (colCategory > -1) Set o.Category = $Get(^excel(pSheet,tRow,colCategory))
 		If (colCheck > -1) Set o.CheckNumber = $Get(^excel(pSheet,tRow,colCheck))
@@ -65,6 +66,9 @@ ClassMethod importExcelSheet(pSheet As %String = "") As %Status
 		If (colStatus > -1) Set o.Status = $Get(^excel(pSheet,tRow,colStatus))
 		If (colSubCategory > -1) Set o.SubCategory = $Get(^excel(pSheet,tRow,colSubCategory))
 		If (colTranDate > -1) Set o.TranDate = $Get(^excel(pSheet,tRow,colTranDate))
+	  } Catch ex {
+		zw ex
+	  }
 		If ("" = tCredit),("" = tDebit) { CONTINUE }
 		Set o.myId = $Increment(^GLOBAL)
 		Set o.Credit = tCredit
