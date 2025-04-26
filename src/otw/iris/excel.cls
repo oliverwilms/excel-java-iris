@@ -53,21 +53,24 @@ ClassMethod importExcelSheet(pSheet As %String = "") As %Status
 	For {
 		Set tRow = $Order(^excel(pSheet,tRow),1)
 		If (tRow = "") { Quit }
+		Set (tCredit,tDebit) = ""
 		Set o = ##class(dc.iris.transact).%New()
 		If (colAccount > -1) Set o.Account = $Get(^excel(pSheet,tRow,colAccount))
 		If (colCategory > -1) Set o.Category = $Get(^excel(pSheet,tRow,colCategory))
 		If (colCheck > -1) Set o.CheckNumber = $Get(^excel(pSheet,tRow,colCheck))
-		If (colCredit > -1) Set o.Credit = $Get(^excel(pSheet,tRow,colCredit))
-		If (colDebit > -1) Set o.Debit = $Get(^excel(pSheet,tRow,colDebit))
+		If (colCredit > -1) Set tCredit = $Get(^excel(pSheet,tRow,colCredit))
+		If (colDebit > -1) Set tDebit = $Get(^excel(pSheet,tRow,colDebit))
 		If (colMemo > -1) Set o.Memo = $Get(^excel(pSheet,tRow,colMemo))
 		If (colMerchant > -1) Set o.Merchant = $Get(^excel(pSheet,tRow,colMerchant))
 		If (colStatus > -1) Set o.Status = $Get(^excel(pSheet,tRow,colStatus))
 		If (colSubCategory > -1) Set o.SubCategory = $Get(^excel(pSheet,tRow,colSubCategory))
 		If (colTranDate > -1) Set o.TranDate = $Get(^excel(pSheet,tRow,colTranDate))
-		If ("" = o.Credit),("" = o.Debit) { CONTINUE }
+		If ("" = tCredit),("" = tDebit) { CONTINUE }
 		Set o.myId = $Increment(^GLOBAL)
+		Set o.Credit = tCredit
+		Set o.Debit = tDebit
 		Set tSC = o.%Save()
-		If $$$ISERR(tSC) { 
+		If $$$ISERR(tSC) {
 			Do $SYSTEM.Status.DisplayError(tSC)
 			QUIT
 		}
