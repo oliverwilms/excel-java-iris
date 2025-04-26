@@ -67,7 +67,10 @@ ClassMethod importExcelSheet(pSheet As %String = "") As %Status
 		If ("" = o.Credit),("" = o.Debit) { CONTINUE }
 		Set o.myId = $Increment(^GLOBAL)
 		Set tSC = o.%Save()
-		If $$$ISERR(tSC) { Quit }
+		If $$$ISERR(tSC) { 
+			Do $SYSTEM.Status.DisplayError(tSC)
+			QUIT
+		}
 	}
 	Quit tSC
 }
