@@ -64,6 +64,7 @@ ClassMethod importExcelSheet(pSheet As %String = "") As %Status
 		If (colStatus > -1) Set o.Status = $Get(^excel(pSheet,tRow,colStatus))
 		If (colSubCategory > -1) Set o.SubCategory = $Get(^excel(pSheet,tRow,colSubCategory))
 		If (colTranDate > -1) Set o.TranDate = $Get(^excel(pSheet,tRow,colTranDate))
+		If ("" = o.Credit),("" = o.Debit) { CONTINUE }
 		Set o.myId = $Increment(^GLOBAL)
 		Set tSC = o.%Save()
 		If $$$ISERR(tSC) { Quit }
