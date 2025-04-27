@@ -3,9 +3,9 @@ Class otw.iris.excel
 
 ClassMethod exportToCSV(pFile As %String = "") As %Status
 {
-	If ("" = $Get(pFile)) Set pFile = "dc_iris-transact.csv"
+	If ("" = $Get(pFile)) Set pFile = "/opt/irisapp/dc_iris-transact.csv"
 	Set tSC = ##class(dc.iris.util).ExportToCSV(pFile)
-	Write "Export to ",pFile," completed.",!
+	Write !,"Export to ",pFile," completed.",!
 	Quit tSC
 }
 
