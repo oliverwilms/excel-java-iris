@@ -73,10 +73,16 @@ ClassMethod importExcelSheet(pSheet As %String = "") As %Status
 		Set o.myId = $Increment(^GLOBAL)
 		Set o.Credit = tCredit
 		Set o.Debit = tDebit
+	  Try {
 		Set tSC = o.%Save()
+	  } Catch ex {
+		zw ex
+	  }
 		If $$$ISERR(tSC) {
-			Do $SYSTEM.Status.DisplayError(tSC)
-			QUIT
+			//Do $SYSTEM.Status.DisplayError(tSC)
+			Set tError = $SYSTEM.Status.GetOneErrorText(tSC)
+			Write !,tError,!
+			//QUIT
 		}
 	}
 	Quit tSC
