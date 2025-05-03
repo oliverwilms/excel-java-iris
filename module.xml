@@ -3,12 +3,13 @@
   <Document name="excel-java-iris.ZPM">
     <Module>
       <Name>excel-java-iris</Name>
-      <Version>0.0.5</Version>
+      <Version>0.0.6</Version>
       <Description>excel-java-iris</Description>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="otw.iris.PKG"/>
       <FileCopy Name="excel/" Target="${mgrdir}excel/"/>
+      <FileCopy Name="java/" Target="${mgrdir}java/"/>
     </Module>
   </Document>
 </Export>
