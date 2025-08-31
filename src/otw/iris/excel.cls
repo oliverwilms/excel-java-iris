@@ -74,6 +74,7 @@ ClassMethod importExcelSheet(pSheet As %String = "") As %Status
 		If (colStatus > -1) Set o.Status = $Get(^excel(pSheet,tRow,colStatus))
 		If (colSubCategory > -1) Set o.SubCategory = $Get(^excel(pSheet,tRow,colSubCategory))
 		If (colTranDate > -1) Set o.TranDate = $Get(^excel(pSheet,tRow,colTranDate))
+		If (o.TranDate [ "/") Set o.TranDate = ##class(dc.iris.util).FixDateString(o.TranDate)
 	  } Catch ex {
 		zw ex
 	  }
