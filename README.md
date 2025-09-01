@@ -86,3 +86,13 @@ I added -1 above because I want to start importing with sheet 0. In my personal 
 ## See data from Excel workbook in IRIS SQL table
 
 ![screenshot](https://github.com/oliverwilms/bilder/blob/main/Capture_SQL.JPG)
+
+## Export global
+
+```
+USER>do $System.OBJ.Export("COUNT.GBL","/opt/irisapp/globalCOUNT.xml",,.errors)
+
+Exporting to XML started on 09/01/2025 14:34:37
+Exporting global: ^COUNT
+Export finished successfully.
+```
