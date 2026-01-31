@@ -87,6 +87,13 @@ I added -1 above because I want to start importing with sheet 0. In my personal 
 
 ![screenshot](https://github.com/oliverwilms/bilder/blob/main/Capture_SQL.JPG)
 
+## Utilize iris-globals-contest for counting Transactions
+
+```
+USER>do ##class(dc.iris.count).Count()
+11592 Transactions counted.
+```
+
 ## Export global
 
 ```
